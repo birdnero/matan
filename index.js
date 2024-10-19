@@ -6,6 +6,8 @@ const getTime = () => {
     return hours * 60 + minutes;
 }
 
+const listener = () => alert("де гламурний тостер?\nв солярії )))")
+
 const changeTime = () => {
     prev = getTime()
     const a = Math.floor(Math.random() * prev)
@@ -13,9 +15,9 @@ const changeTime = () => {
     const text1 = `${a}`
     const text2 = ` +${b}i`
     if(text1.includes("13") || text2.includes("13")){
-        document.getElementById("toster").addEventListener("click", () => {
-            alert("де гламурний тостер?\nв солярії )))")
-        })
+        document.getElementById("toster").addEventListener("click", listener)
+    } else {
+        document.getElementById("toster").removeEventListener("click", listener)
     }
 
     document.querySelector(".number").innerHTML = `<p>${text1}</p><p>${text2}</p>`;
